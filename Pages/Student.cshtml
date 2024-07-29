@@ -1,0 +1,69 @@
+﻿@page
+@model StudentModel
+@{
+}
+<div class ="container">
+    <form method="post" >
+        <table class="table">
+            <tr>
+                <th>student Id</th>
+                <td>
+                    <input type="number" asp-for="student.Id" />
+                </td>
+            </tr>
+            <tr>
+                <th>Student Name</th>
+          
+                <td>
+                    <input type="text" asp-for="student.Name"/>
+                </td>
+            </tr>
+
+           
+            <tr>
+            <th>Qualification</th>
+            <td>
+                <input type="text" asp-for="student.qualification"/>
+            </td>
+            </tr>
+
+            <tr>
+                <th>Skill</th>
+                <td>
+                    <input type ="text" asp-for="student.skill" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="Add" />
+                </td>
+            </tr>
+
+
+        </tableclass>
+    </form>
+    <thread>
+        <table class="table">
+            <thread>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Qualification</th>
+                    <th>Skill</th>
+                </tr>
+            </thread>
+            <tbody>
+                @foreach(var s in Model.List)
+                {
+                    <tr>
+                        <td>@s.Id</td>
+                        <td>@s.Name</td>
+                        <td>@s.qualification</td>
+                        <td>@s.skill</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </thread>
+</div>
